@@ -1,5 +1,3 @@
-
-
 function dateTracker() {
   var timeDisplayEl = $("#time-display");
   var timeDisplay = dayjs().format("MMM D, YYYY @ hh:mm:ss a");
@@ -11,22 +9,24 @@ var relativeTime = $(".hora");
 var hour = dayjs().hour();
 
 function currentHour() {
+  
   for (var h = 0; h < relativeTime.length; h++) {
     var elementID = relativeTime[h];
-    var manipID = document.getElementById(relativeTime[i]);
+    var manipID = Number(relativeTime[h].getAttribute("id").split('-')[1]);
     $(relativeTime[h]).removeClass("past", "present", "future");
+    //console.log(manipID, hour, elementID);
 
-    if (elementID < hour) {
-      $(manipID).addClass("past");
-    } else if (elementID > hour) {
-      $(manipID).addClass("future");
+    if (manipID < hour) {
+      $(elementID).addClass("past");
+    } else if (manipID > hour) {
+      $(elementID).addClass("future");
     } else {
-      $(manipID).addClass("present");
+      $(elementID).addClass("present");
     }
   }
 }
 
-console.log(currentHour);
+currentHour();
 
 registerdTask();
 
@@ -34,12 +34,12 @@ var task = $(".description");
 var output = $(".hora");
 var saveBtn = $(".saveBtn");
 
-saveBtn.addEventListener('click', registerdTask);
+saveBtn.addEventListener("click", registerdTask);
 
-output.textContent = localStorage.getItem('task');
-task.value = localStorage.getItem('task');
+output.textContent = localStorage.getItem("task");
+task.value = localStorage.getItem("task");
 
 function registerdTask() {
-    localStorage.setItem('task', task);
-    output.textContent = task;
-}
+  localStorage.setItem("task", task);
+  output.textContent = task;
+} 
