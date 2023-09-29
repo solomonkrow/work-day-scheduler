@@ -1,0 +1,80 @@
+:root {
+  --font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  background-image: linear-gradient(to bottom right, white, #e3edf1, #60737a);
+}
+
+header {
+    background-color: #14303a;
+    color: white;
+}
+
+#time-display {
+  font-size: 40px;
+  font-weight: 900;
+  font-family: var(--font);
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.time-block {
+  border-radius: 15px;
+}
+
+.row {
+  border-top: 1px solid white;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.past {
+  background-color: gray;
+  color: black;
+}
+
+.present {
+  background-color: rgb(182, 124, 182);
+  color: white;
+}
+
+.future {
+  background-color: lightblue;
+  color: white;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
